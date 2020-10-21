@@ -10,6 +10,7 @@ import SignupPage from './components/LandingPage/SignupPage';
 import EncounterView from './components/Encounter';
 import PokeMartView from './components/PokeMart'
 import PokedexView from './components/Pokedex';
+import FourZeroFour from './components/404/404';
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
         <Route exact path="/signup" render={() => token ? <Redirect to="/encounter" /> : <SignupPage setToken={setToken} signupTrainer={signupTrainer} setSignupTrainer={setSignupTrainer} />} />
         <Route exact path="/" render={() => token ? <Redirect to="/encounter" /> : <LandingPage
           token={token} setToken={setToken} pokemonTrainer={pokemonTrainer} setPokemonTrainer={setPokemonTrainer} />} />
+        <Route render={() => <FourZeroFour />} />
       </Switch>
     </Router>
   )
